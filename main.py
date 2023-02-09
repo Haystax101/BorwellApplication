@@ -10,14 +10,14 @@ def take_input(str):
         dimension = float(input(f"Enter {str}: "))
         return dimension
     except TypeError:
-        new = input("You must enter a number.")
+        print("You must enter a number.")
         take_input(str)
     # I considered validating the dimensions of the room but decided that
     # Not doing so may provide more utility from a general perspective as 
     # The program could be used on rooms in models or towers with abnormal 
     # dimensions. 
     # This simple method of validation simply attempts to convert the user's
-    # input into a float. If a TypeError is received it is assumed their input 
+    # input into a float. If a TypeError is thrown it is assumed their input 
     # is not in the correct form.
 length = take_input("length")
 width = take_input("width")
@@ -38,6 +38,11 @@ def surface_area(length, width, height):
 
 def volume(length, width, height):
     return (length * width * height)
+
+print(floor_area(length, width))
+print(surface_area(length, width, height))
+print(volume(length, width, height))
+
 
 
 
